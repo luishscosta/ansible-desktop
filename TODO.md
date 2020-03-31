@@ -51,6 +51,8 @@
   * [X] docker-compose
   * [ ] Docker funcional para usuário
 
+* [ ] Telegram
+
 * [ ] PHP
   * [ ] 7.4
   * [ ] Composer
@@ -71,7 +73,6 @@
 * [ ] Adicionar atalhos para barra inferior (Panel)
 * [ ] Adicionar Topbar
 * [ ] Preparar Monitor para Desktop em cima
-
 * [ ] Tema
   * [ ] Interface
   * [ ] Icones
@@ -79,7 +80,6 @@
   * [ ] Dock
   * [ ] Wallpapper
   * [ ] ulauncher
-
 * [ ] Extensões
   * [ ] Workspace Scroller
   * [ ] Slider
@@ -87,7 +87,6 @@
   * [ ] Win7 Alt-Tab
   * [ ] gTile
   * [ ] Transparent Panel  
-
 * [ ] Desklets
   * [ ] Calendar
 
