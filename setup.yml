@@ -1,0 +1,16 @@
+---
+
+- name: Setup initial machine instalation
+  hosts: all
+  become: yes
+  gather_facts: yes
+  roles:
+    - docker
+    - base
+    - vpn
+    - chrome
+    - slack
+    - authy
+    - spotify
+    - vscode
+    - terminal

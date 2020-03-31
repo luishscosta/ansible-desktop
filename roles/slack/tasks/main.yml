@@ -1,0 +1,14 @@
+---
+- name: Installing Slack
+  snap: 
+    name: slack
+    state: present
+    classic: yes
+
+- name: Creating shortcut
+  copy:
+    src: /var/lib/snapd/desktop/applications/slack_slack.desktop
+    dest: /home/lcosta/.local/share/applications/slack_slack.desktop
+    owner: lcosta
+    group: lcosta
+    mode: '0744'

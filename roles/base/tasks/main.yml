@@ -1,0 +1,34 @@
+---
+- name: Update all packages to the latest version
+  apt:
+    upgrade: dist
+
+- name: Installing Snap Package
+  apt:
+    name: snapd
+    state: latest
+    update_cache: yes
+
+- name: Remove useless packages from the cache
+  apt:
+    autoclean: yes
+
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: yes
+
+- name: create ssh key pair
+  become: no
+  register: key
+  openssh_keypair:
+    path: /home/{{ user }}/.ssh/id_rsa
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    comment: "{{ email }}"
+
+- name: show public key  
+  debug:
+    msg: "{{ key.public_key }} {{ key.comment }}"
+
+  
+

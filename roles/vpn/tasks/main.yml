@@ -1,0 +1,8 @@
+---
+- name: Installing l2tp vpn client
+  apt:
+    pkg:
+      - network-manager-l2tp
+      - network-manager-l2tp-gnome
+    state: latest
+    update_cache: yes

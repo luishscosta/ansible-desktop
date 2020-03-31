@@ -1,0 +1,38 @@
+---
+- name: install dependencies
+  apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+    state: latest
+    update_cache: yes
+
+- name: add tilix repository key
+  register: docker_key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+
+- name: docker repository
+  register: docker_repo
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+    filename: docker
+  when: docker_key.failed == 0
+
+- name: install docker and docker compose
+  apt:
+    name: ['docker-ce', 'docker-compose'] 
+    state: latest
+    update_cache: yes
+  when: docker_repo.state == "present"
+
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+
+- name: remove default terminals
+  shell: "usermod -aG docker {{ user }}"
+  when: "'docker-ce' in ansible_facts.packages"

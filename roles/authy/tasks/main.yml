@@ -1,0 +1,6 @@
+---
+- name: Installing Authy
+  snap: 
+    name: authy
+    state: present
+    channel: latest/beta

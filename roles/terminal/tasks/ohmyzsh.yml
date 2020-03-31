@@ -1,0 +1,37 @@
+---
+- name: tilix repository
+  register: tilix_repo
+  apt_repository:
+    repo: deb http://ppa.launchpad.net/webupd8team/terminix/ubuntu bionic main
+    state: present
+    filename: terminix
+
+- name: add tilix repository key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 7B2C3B0889BF5709A105D03AC2518248EEA14886
+  when: tilix_repo.state == "present"
+
+- name: install tilix
+  apt:
+    name: tilix 
+    state: latest
+    update_cache: yes
+  when: tilix_repo.state == "present"
+
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+
+- name: remove gnome terminal
+  apt:
+    name: gnome-terminal 
+    state: absent
+  when: "'tilix' in ansible_facts.packages"
+
+- name: set tilix as default terminal
+  shell: "{{ item }}"
+  with_items:
+    - gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/tilix
+    - gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
+  when: "'tilix' in ansible_facts.packages"
