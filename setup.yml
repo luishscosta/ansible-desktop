@@ -5,12 +5,14 @@
   become: yes
   gather_facts: yes
   roles:
-    - docker
     - base
     - vpn
+    - lansweeoer
+    - falcon
     - chrome
     - slack
     - authy
     - spotify
     - vscode
     - terminal
+    - docker

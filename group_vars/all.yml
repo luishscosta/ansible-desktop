@@ -1,0 +1,19 @@
+---
+# Your information
+local:
+  user: #USER
+  group: #GROUP
+  email: #EMAIL
+
+# Lan Sweeper
+ls:
+  url: https://content.lansweeper.com/l/651653/2018-11-27/4d6yg
+  server: #IP
+  port: 9524
+  dest: /tmp/lansweeper
+
+# Falcon
+falcon:
+  url: #URL
+  key: #KEY
+  process: /opt/CrowdStrike/falconctl

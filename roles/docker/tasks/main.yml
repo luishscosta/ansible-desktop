@@ -34,5 +34,5 @@
     manager: auto
 
 - name: remove default terminals
-  shell: "usermod -aG docker {{ user }}"
+  shell: "usermod -aG docker {{ local.user }}"
   when: "'docker-ce' in ansible_facts.packages"

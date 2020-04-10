@@ -1,0 +1,16 @@
+---
+- name: Install CrowndStrike Falson Sensos Antivirus 
+  register: falcon_install
+  apt:
+    deb: "{{ falcon.url }}"
+
+- name: Insert Falcon Key
+  command: "{{ falcon.process }} -f -s --cid={{ falcon.key }}"
+  when: falcon_install.stderr == ""
+
+- name: Start service Falcon Sensor, if not started
+  service:
+    name: falcon-sensor
+    state: restarted
+    enabled: yes
+  

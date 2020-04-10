@@ -21,14 +21,11 @@
   become: no
   register: key
   openssh_keypair:
-    path: /home/{{ user }}/.ssh/id_rsa
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    comment: "{{ email }}"
+    path: /home/{{ local.user }}/.ssh/id_rsa2
+    owner: "{{ local.user }}"
+    group: "{{ local.group }}"
+    comment: "{{ local.email }}"
 
 - name: show public key  
   debug:
     msg: "{{ key.public_key }} {{ key.comment }}"
-
-  
-

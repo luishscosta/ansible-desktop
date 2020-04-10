@@ -1,0 +1,20 @@
+---
+- name: Download LanSweeper Agent file
+  register: ls_download
+  become: no
+  get_url:
+    url: "{{ ls.url }}"
+    dest: "{{ ls.dest }}"
+    mode: '0740'
+
+- name: Install LanSweeper Agent
+  become: yes
+  shell: "{{ ls_download.dest }} --mode unattended --server {{ ls.server }} --port {{ ls.port }}"
+  when: ls_download.failed == 0
+
+- name: Start service LansweeperAgent, if not started
+  service:
+    name: LansweeperAgentService
+    state: restarted
+    enabled: yes
+    

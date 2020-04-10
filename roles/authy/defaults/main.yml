@@ -1,4 +1,0 @@
----
-chrome:
-  set_default: false
-  google_apt_exists: false

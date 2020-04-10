@@ -12,7 +12,6 @@
 * [ ] Layout do teclado
 * [ ] Lang SO
 * [ ] Configurar Acentuaćão (Cedilha) https://plus.diolinux.com.br/t/cedilha-com-teclado-americano-no-linux-mint-19-1/6218/3
-
 * [ ] Script de setup
   * [X] Ansible Shell Script
     * [ ] Validar se está instalado
@@ -23,48 +22,41 @@
 
 ### Softwares
 
+* [ ] LanSweeper
+* [ ] Falcon Sensor
 * [X] Authy
-
+* [ ] FileZilla
 * [ ] Zoom
-
 * [X] Chrome
   * [x] Chrome como browser default
-
 * [X] Slack
   * [X] Atalho para slack
-
 * [X] Spotify
-
 * [ ] VSCODE
   * [X] Instalar
   * [ ] Configurar GIST
   * [ ] Rodar atualizaćão de
-
 * [ ] Terminal
   * [X] Tilix
   * [ ] oh-my-ksh (dotfiles)
     * [ ] Extensões
   * [ ] Desabilitar terminal Padrão
-
 * [X] Docker
   * [X] Instalar
   * [X] docker-compose
   * [ ] Docker funcional para usuário
-
 * [ ] Telegram
-
 * [ ] PHP
   * [ ] 7.4
   * [ ] Composer
   * [ ] Extensões laravel
   * [ ] PHPCS
   * [ ] PHPINTELISENSE
-
 * [ ] Postman
 * [ ] Notepad++
 * [ ] Reminia (RDP)
+* [ ] Node+NPM
   * [ ] Configurar Reminia
-
 * [ ] Configurar Hosts
   * [ ] Subir chave reversa para servidores
 
