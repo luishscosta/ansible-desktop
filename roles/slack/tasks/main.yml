@@ -8,7 +8,7 @@
 - name: Creating shortcut
   copy:
     src: /var/lib/snapd/desktop/applications/slack_slack.desktop
-    dest: /home/{{ local.user }}/.local/share/applications/slack_slack.desktop
-    owner: {{ local.user }}
-    group: {{ local.group }}
+    dest: "/home/{{ local.user }}/.local/share/applications/slack_slack.desktop"
+    owner: "{{ local.user }}"
+    group: "{{ local.group }}"
     mode: '0744'

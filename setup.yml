@@ -1,13 +1,14 @@
 ---
 
 - name: Setup initial machine instalation
-  hosts: all
+  hosts: localhost
+  connection: local
   become: yes
   gather_facts: yes
   roles:
     - base
     - vpn
-    - lansweeoer
+    - lansweeper
     - falcon
     - chrome
     - slack

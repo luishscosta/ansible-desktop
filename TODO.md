@@ -22,8 +22,8 @@
 
 ### Softwares
 
-* [ ] LanSweeper
-* [ ] Falcon Sensor
+* [X] LanSweeper
+* [X] Falcon Sensor
 * [X] Authy
 * [ ] FileZilla
 * [ ] Zoom
